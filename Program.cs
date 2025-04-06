@@ -1,0 +1,46 @@
+﻿using System;
+
+namespace OopDemo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("动物声音模拟器");
+            Console.WriteLine("---------------");
+
+            // 创建声音服务实例
+            ISoundService basicService = new BasicSoundService();
+            ISoundService advancedService = new AdvancedSoundService();
+
+            // 创建动物实例并注入名称和不同的声音服务
+            Dog dog = new Dog("旺财", basicService);
+            Cat cat = new Cat("咪咪", advancedService);
+
+            // 使用Animal类型的引用调用方法，展示多态性
+            Console.WriteLine("\n使用Animal引用调用方法：");
+            Animal animal1 = dog;
+            Animal animal2 = cat;
+
+            Console.WriteLine($"{animal1.Name}发出声音：");
+            animal1.MakeSound(); // 调用Dog的MakeSound方法
+            Console.WriteLine($"{animal2.Name}发出声音：");
+            animal2.MakeSound(); // 调用Cat的MakeSound方法
+
+            // 使用IMovable接口引用调用方法
+            Console.WriteLine("\n使用IMovable引用调用方法：");
+            IMovable movable1 = dog;
+            IMovable movable2 = cat;
+
+            movable1.Move(); // 调用Dog的Move方法
+            movable2.Move(); // 调用Cat的Move方法
+
+            // 调用Dog特有的重载方法
+            Console.WriteLine("\n调用Dog的重载方法：");
+            dog.MakeSound(3); // 调用重载的MakeSound方法，声音重复3次
+
+            Console.WriteLine("\n按任意键退出...");
+            Console.ReadKey();
+        }
+    }
+}

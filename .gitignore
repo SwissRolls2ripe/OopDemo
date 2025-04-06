@@ -1,0 +1,28 @@
+# Build results
+bin/
+obj/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+
+# Rider files
+.idea/
+
+# Auto-generated files
+*.g.cs
+*.g.i.cs
+*.designer.cs
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+
+# Logs
+*.log
+
+# Others
+*.DS_Store
+*.vscode/
