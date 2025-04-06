@@ -16,5 +16,11 @@ namespace OopDemo
 
         // 抽象方法，用于定义动物发声的行为
         public abstract void MakeSound();
+
+        // 虚方法，用于显示动物的信息
+        public virtual void DisplayInfo()
+        {
+            Console.WriteLine($"{Name}这个动物并不特殊！");
+        }
     }
 }

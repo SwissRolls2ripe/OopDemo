@@ -6,7 +6,7 @@ namespace OopDemo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("动物声音模拟器");
+            Console.WriteLine("C# OOP体现");
             Console.WriteLine("---------------");
 
             // 创建声音服务实例
@@ -24,8 +24,10 @@ namespace OopDemo
 
             Console.WriteLine($"{animal1.Name}发出声音：");
             animal1.MakeSound(); // 调用Dog的MakeSound方法
+            animal1.DisplayInfo(); // 调用Dog的DisplayInfo方法
             Console.WriteLine($"{animal2.Name}发出声音：");
             animal2.MakeSound(); // 调用Cat的MakeSound方法
+            animal2.DisplayInfo(); // 调用Cat的DisplayInfo方法
 
             // 使用IMovable接口引用调用方法
             Console.WriteLine("\n使用IMovable引用调用方法：");

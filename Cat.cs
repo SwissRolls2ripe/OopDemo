@@ -24,5 +24,11 @@ namespace OopDemo
         {
             Console.WriteLine("猫在优雅地走动...");
         }
+
+        // 重写DisplayInfo方法，提供特定的实现
+        public override void DisplayInfo()
+        {
+            Console.WriteLine($"{Name}这个动物很奇特！");
+        }
     }
 }
